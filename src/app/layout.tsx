@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next' // <-- Adicionado 'Viewport'
 import Script from 'next/script'
 import { defaultMetadata } from '@/seo/metadata'
 import { schemaOrg } from '@/seo/schema'
@@ -8,6 +8,14 @@ import './globals.css'
 
 export const metadata: Metadata = defaultMetadata
 
+// Configuração oficial do Next.js para o Viewport
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1, // Limita a escala máxima para evitar o travamento
+  userScalable: false, // Desativa o pinch-zoom que está "soltando" o layout
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -16,9 +24,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+        {/* A tag meta viewport manual foi removida daqui para usar o export acima */}
       </head>
-      <body>
+      <body> 
         {/* GTM (noscript fallback) */}
         <GTMNoScript />
 
