@@ -11,7 +11,8 @@ import BotaoWhatsApp from '@/components/ui/BotaoWhatsApp'
 
 export default function Home() {
   return (
-    <main>
+    // Adicionamos o overflow-x-hidden aqui para cortar qualquer vazamento lateral
+    <main className="overflow-x-hidden w-full relative flex flex-col min-h-screen">
       <Navbar />
       <Hero />
       <Servicos />
@@ -21,6 +22,8 @@ export default function Home() {
       <CTAFinal />
       <Localizacao />
       <Footer />
+      
+      {/* O Botão WhatsApp geralmente tem position fixed, então não será afetado pelo overflow do main */}
       <BotaoWhatsApp />
     </main>
   )
