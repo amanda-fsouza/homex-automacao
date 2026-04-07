@@ -1,26 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ─── Configuração do Tema Tailwind v4 ──────────────────── */
+@theme {
+  /* Cores */
+  --color-primary:         #2F8BA6;
+  --color-primary-hover:   #1a5568;
+  --color-primary-light:   #E8F4F7;
+  --color-primary-mid:     #4A9DB5;
+  --color-secondary:       #0F2D3A;
+
+  --color-bg-main:         #FFFFFF;
+  --color-bg-alt:          #F6FAFB;
+  --color-bg-dark:         #0D1117;
+  --color-bg-card:         #EFF6F9;
+
+  --color-content:         #1A1A2E;
+  --color-content-muted:   #6B7280;
+  --color-content-light:   #9CA3AF;
+  --color-content-on-dark: #F9FAFB;
+  --color-content-on-pri:  #FFFFFF;
+
+  --color-border-color:    #D9E8ED;
+
+  /* Tipografia */
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* Sombras Customizadas */
+  --shadow-card:       0 2px 12px rgba(0,0,0,0.06);
+  --shadow-md-custom:  0 4px 20px rgba(36,106,126,0.12);
+  --shadow-lg-custom:  0 12px 40px rgba(36,106,126,0.16);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ─── Base ───────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-content);
+    background-color: var(--color-bg-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+    @apply antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-content);
+  }
+
+  h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+  h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+  h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
+
+  p {
+    color: var(--color-content-muted);
+    line-height: 1.7;
+  }
+
+  ::selection {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+  }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: var(--color-bg-alt); }
+  ::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 99px; }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─── Componentes ────────────────────────────────────────── */
+@layer components {
+  .container-custom {
+    @apply w-full max-w-300 mx-auto px-6;
+  }
+
+  .section {
+    @apply py-20;
+  }
+
+  .section-alt {
+    @apply bg-bg-alt;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─── Utilitários (Animações de Scroll) ─────────────────── */
+@layer utilities {
+  .fade-up {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-up.d1 { transition-delay: 0.1s; }
+  .fade-up.d2 { transition-delay: 0.2s; }
+  .fade-up.d3 { transition-delay: 0.3s; }
+  .fade-up.d4 { transition-delay: 0.4s; }
+  .fade-up.d5 { transition-delay: 0.5s; }
 }
