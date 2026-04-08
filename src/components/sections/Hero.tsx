@@ -75,7 +75,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative flex w-full items-center justify-center min-h-[80svh] md:min-h-145 lg:min-h-[80vh] bg-[url('/images/hero/hero-mobile.png')] md:bg-[url('/images/hero/hero.png')] bg-cover bg-center bg-no-repeat"
+      className="relative flex w-full items-center justify-center min-h-[80svh] md:min-h-145 lg:min-h-[80vh] bg-[url('/images/hero/hero-mobile.webp')] md:bg-[url('/images/hero/hero.webp')] bg-cover bg-center bg-no-repeat"
     >
       {/* Overlay leve */}
       <div className="absolute inset-0 bg-black/45 md:bg-black/55" />
