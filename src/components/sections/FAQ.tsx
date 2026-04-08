@@ -22,60 +22,54 @@ function FAQItem({
 
   return (
     <div ref={ref} className={cn('fade-up', delays[index % 5], isVisible && 'visible')}>
-      <button
-        onClick={onToggle}
-        className="w-full text-left"
-        aria-expanded={aberto}
-      >
-        <div
-          className={cn(
-            'flex w-full items-start justify-between gap-4 rounded-2xl border p-5 transition-all duration-300 backdrop-blur-sm',
-            aberto
-              ? 'border-primary/30 bg-white/80 shadow-sm'
-              : 'border-white/50 bg-white/55 hover:border-primary/20 hover:bg-white/70'
-          )}
-        >
-          <div className="flex items-start gap-4">
-            <span className={cn(
-              'mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-display text-xs font-bold transition-colors',
-              aberto ? 'bg-primary text-white' : 'bg-content/10 text-content-muted'
-            )}>
-              {String(index + 1).padStart(2, '0')}
-            </span>
-            <span className={cn(
-              'font-display text-base font-semibold leading-snug transition-colors',
-              aberto ? 'text-primary' : 'text-content'
-            )}>
-              {item.pergunta}
-            </span>
+      {/* Card único cobre pergunta + resposta */}
+      <div className={cn(
+        'rounded-2xl border backdrop-blur-sm transition-all duration-300',
+        aberto
+          ? 'border-primary/30 bg-white/80 shadow-sm'
+          : 'border-white/50 bg-white/55 hover:border-primary/20 hover:bg-white/70'
+      )}>
+        <button onClick={onToggle} className="w-full text-left" aria-expanded={aberto}>
+          <div className="flex w-full items-start justify-between gap-4 p-5">
+            <div className="flex items-start gap-4">
+              <span className={cn(
+                'mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-display text-xs font-bold transition-colors',
+                aberto ? 'bg-primary text-white' : 'bg-content/10 text-content-muted'
+              )}>
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <span className={cn(
+                'font-display text-base font-semibold leading-snug transition-colors',
+                aberto ? 'text-primary' : 'text-content'
+              )}>
+                {item.pergunta}
+              </span>
+            </div>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              className={cn(
+                'mt-0.5 h-5 w-5 shrink-0 transition-all duration-300',
+                aberto ? 'rotate-180 text-primary' : 'text-content-muted'
+              )}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
           </div>
+        </button>
 
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            className={cn(
-              'mt-0.5 h-5 w-5 shrink-0 transition-all duration-300',
-              aberto ? 'rotate-180 text-primary' : 'text-content-muted'
-            )}
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
-      </button>
-
-      <div
-        className={cn(
+        <div className={cn(
           'grid transition-all duration-300 ease-in-out',
           aberto ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-        )}
-      >
-        <div className="overflow-hidden">
-          <div className="px-5 pb-5 pt-3">
-            <p className="text-sm leading-relaxed text-content-muted pl-11">
-              {item.resposta}
-            </p>
+        )}>
+          <div className="overflow-hidden">
+            <div className="px-5 pb-5 pt-0">
+              <p className="text-sm leading-relaxed text-gray-700 pl-11">
+                {item.resposta}
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -86,6 +80,7 @@ function FAQItem({
 export default function FAQ() {
   const [aberto, setAberto] = useState<number | null>(null)
   const { ref, isVisible } = useScrollAnimation()
+  const { ref: bg2Ref, isVisible: bg2Visible } = useScrollAnimation({ threshold: 0.1 })
 
   return (
     <section id="faq" className="relative overflow-hidden py-16 md:py-20">
@@ -172,6 +167,29 @@ export default function FAQ() {
         className="absolute bottom-0 left-0 right-0 h-16 md:h-24"
         style={{ background: 'rgb(13,17,23)' }}
       />
+
+      {/* Circuito decorativo — canto inferior direito, entra da direita */}
+      <div
+        ref={bg2Ref}
+        className="absolute bottom-0 right-0 z-10 w-[480px] max-w-[55%] pointer-events-none select-none"
+        style={{
+          opacity: bg2Visible ? 1 : 0,
+          transform: bg2Visible ? 'translateX(0)' : 'translateX(80px)',
+          transition: 'opacity 1.2s ease, transform 1.2s ease',
+        }}
+      >
+        <img
+          src="/images/bg/bg02.png"
+          alt=""
+          aria-hidden="true"
+          className="w-full"
+          style={{
+            opacity: 0.09,
+            maskImage: 'linear-gradient(to left, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 70%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 70%, transparent 100%)',
+          }}
+        />
+      </div>
     </section>
   )
 }

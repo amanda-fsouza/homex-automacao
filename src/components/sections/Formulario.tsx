@@ -163,7 +163,7 @@ export function Formulario() {
       <button
         type="submit"
         disabled={loading}
-        className="group mt-1 flex w-full items-center justify-center gap-3 rounded-xl bg-primary px-6 py-4 font-display text-base font-bold text-white shadow-md-custom transition-all duration-300 hover:scale-[1.02] hover:shadow-lg-custom active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-70"
+        className="group mt-1 flex w-full cursor-pointer items-center justify-center gap-3 rounded-xl bg-primary px-6 py-4 font-display text-base font-bold text-white shadow-md-custom transition-all duration-300 hover:scale-[1.02] hover:shadow-lg-custom active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-70"
       >
         {loading ? (
           <>

@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useRef, useCallback, useEffect } from 'react'
+import { useState, useRef, useCallback, useEffect, Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
 import {
   Cctv,
   Lock,
@@ -233,9 +234,22 @@ function DetailPanel({
 }
 
 // ── Componente principal ──────────────────────────────────
-export default function Servicos() {
+const FECHADURAS_INDEX = SERVICOS.findIndex(s => s.id === 'fechaduras')
+
+function ServicosContent() {
+  const searchParams = useSearchParams()
   const { ref, isVisible } = useScrollAnimation()
-  const [activeIndex, setActiveIndex] = useState(0)
+
+  const getInitialIndex = () => {
+    const param = searchParams.get('servico')
+    if (param) {
+      const idx = SERVICOS.findIndex(s => s.id === param)
+      if (idx !== -1) return idx
+    }
+    return FECHADURAS_INDEX
+  }
+
+  const [activeIndex, setActiveIndex] = useState(getInitialIndex)
   const [detailVisible, setDetailVisible] = useState(true)
 
   const trackRef = useRef<HTMLDivElement>(null)
@@ -243,7 +257,16 @@ export default function Servicos() {
 
   useEffect(() => {
     if (trackRef.current) {
-      trackRef.current.scrollLeft = OFFSET * CARD_W
+      trackRef.current.scrollLeft = (OFFSET + activeIndex) * CARD_W
+    }
+    // Se veio do footer com ?servico=, rola até a seção
+    if (searchParams.get('servico')) {
+      const el = document.getElementById('servicos')
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }, 100)
+      }
     }
   }, [])
 
@@ -403,5 +426,13 @@ export default function Servicos() {
 
       </div>
     </section>
+  )
+}
+
+export default function Servicos() {
+  return (
+    <Suspense fallback={null}>
+      <ServicosContent />
+    </Suspense>
   )
 }

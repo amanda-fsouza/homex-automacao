@@ -29,7 +29,7 @@ export const SERVICOS: Servico[] = [
   {
     id: 'aspiracao-central',
     titulo: 'Aspiração Central',
-    descricao: 'Sistema centralizado de aspiração integrado à automação da casa. Sem barulho nos cômodos, máxima eficiência e praticidade.',
+    descricao: 'Sistema de aspiração integrado à automação residencial, com motor instalado em local discreto, reduzindo o ruído nos ambientes. As tomadas distribuídas pela casa permitem uma limpeza prática, eficiente e silenciosa em todos os espaços.',
     icone: '🌀',
     beneficios: [
       'Sem ruído nos ambientes',
@@ -47,7 +47,7 @@ export const SERVICOS: Servico[] = [
     beneficios: [
       'Cobertura Wi-Fi em 100% da residência',
       'Rede cabeada de alta velocidade',
-      'Segmentação de redes (IoT, pessoal, visitantes)',
+      'Segmentação de redes (pessoal, visitantes)',
       'Equipamentos de nível profissional',
       'Sem pontos cegos de sinal',
     ],
@@ -94,7 +94,7 @@ export const SERVICOS: Servico[] = [
   {
     id: 'audio-video',
     titulo: 'Sistema de Áudio e Vídeo',
-    descricao: 'Distribua música e vídeo por toda a casa com qualidade profissional. Controle por zona, integração com streaming e comando de voz.',
+    descricao: 'Distribua música e vídeo por toda a casa com qualidade profissional. Controle por ambiente, integração com streaming e comando de voz.',
     icone: '🔊',
     beneficios: [
       'Controle independente por ambiente',
@@ -162,8 +162,8 @@ export const SERVICOS: Servico[] = [
 export const COMO_FUNCIONA: PassoComoFunciona[] = [
   {
     numero: '01',
-    titulo: 'Visita Técnica',
-    descricao: 'Nossa equipe visita sua residência para entender suas necessidades e mapear todos os ambientes.',
+    titulo: 'Entendimento das Necessidades',
+    descricao: 'Analisamos seu estilo de vida e objetivos para o projeto.',
   },
   {
     numero: '02',
@@ -172,13 +172,18 @@ export const COMO_FUNCIONA: PassoComoFunciona[] = [
   },
   {
     numero: '03',
-    titulo: 'Instalação Sem Obras',
-    descricao: 'Instalamos todos os equipamentos sem precisar quebrar paredes ou fazer reformas.',
+    titulo: 'Preparação e Infraestrutura',
+    descricao: 'Organizamos toda a parte técnica para receber a automação.',
   },
   {
     numero: '04',
-    titulo: 'Configuração e Treinamento',
-    descricao: 'Configuramos tudo no seu smartphone e ensinamos a aproveitar ao máximo cada funcionalidade.',
+    titulo: 'Instalação e Configuração',
+    descricao: 'Implementamos e integramos todos os dispositivos.',
+  },
+  {
+    numero: '05',
+    titulo: 'Entrega e Suporte',
+    descricao: 'Realizamos testes, apresentamos o sistema e oferecemos suporte contínuo.',
   },
 ]
 

@@ -81,7 +81,7 @@ export default function Sobre() {
             />
 
             {/* ── Wrapper da imagem ── */}
-            <div className="relative z-10">
+            <div className="relative z-10 my-6 md:my-0">
               {/*
                 Anel de borda brilhante (glow border).
                 Funciona como um "moldura" com gradiente que envolve a imagem.
@@ -115,17 +115,6 @@ export default function Sobre() {
                         'linear-gradient(to top, rgba(13,17,23,0.85) 0%, transparent 100%)',
                     }}
                   />
-
-                  {/* ── Chip de status no canto superior direito da foto ── */}
-                  <div className="absolute top-4 right-4 flex items-center gap-1.5 rounded-full bg-bg-dark/80 backdrop-blur-sm border border-primary/30 px-3 py-1.5">
-                    <span
-                      className="h-2 w-2 rounded-full bg-primary"
-                      style={{ animation: 'pulse 2s cubic-bezier(0.4,0,0.6,1) infinite' }}
-                    />
-                    <span className="text-[11px] font-semibold uppercase tracking-widest text-primary">
-                      Instalação profissional
-                    </span>
-                  </div>
 
                   {/* ── Reflexo sutil de luz no topo (shimmer) ── */}
                   <div

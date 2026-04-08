@@ -85,7 +85,7 @@ export default function Footer() {
               {SERVICOS_FOOTER.map((s) => (
                 <li key={s.id}>
                   <a
-                    href="#servicos"
+                    href={`?servico=${s.id}#servicos`}
                     className="text-sm text-white/60 transition-colors hover:text-primary no-underline"
                   >
                     {s.titulo}

@@ -69,9 +69,8 @@ export default function Localizacao() {
         {/* Título */}
         <div ref={titleRef} className={cn('mb-12 fade-up', titleVisible && 'visible')}>
           <SectionTitle
-            tag="Onde atuamos"
-            titulo="Atendemos <span style='color:var(--color-primary)'>São José dos Campos</span> e toda a região"
-            subtitulo="Nossa equipe se desloca até você para a visita técnica, instalação e suporte, sem custo adicional de deslocamento."
+            titulo="Nossa <span style='color:var(--color-primary)'>Localização</span>"
+            subtitulo="Venha nos visitar e descubra soluções inteligentes para sua casa."
             align="center"
           />
         </div>

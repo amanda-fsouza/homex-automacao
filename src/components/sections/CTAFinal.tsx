@@ -15,6 +15,7 @@ const GARANTIAS = [
 export default function CTAFinal() {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation()
   const { ref: formRef, isVisible: formVisible } = useScrollAnimation({ threshold: 0.05 })
+  const { ref: bgRef, isVisible: bgVisible } = useScrollAnimation({ threshold: 0.1 })
 
   return (
     <section
@@ -33,6 +34,28 @@ export default function CTAFinal() {
             backgroundSize: '32px 32px',
           }}
         />
+        {/* Imagem decorativa circuito — canto inferior esquerdo */}
+        <div
+          ref={bgRef}
+          className="absolute bottom-0 left-0 w-[480px] max-w-[55%] pointer-events-none select-none"
+          style={{
+            opacity: bgVisible ? 1 : 0,
+            transform: bgVisible ? 'translateX(0)' : 'translateX(-80px)',
+            transition: 'opacity 1.2s ease, transform 1.2s ease',
+          }}
+        >
+          <img
+            src="/images/bg/bg.png"
+            alt=""
+            aria-hidden="true"
+            className="w-full"
+            style={{
+              opacity: 0.09,
+              maskImage: 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 80%, transparent 100%)',
+              WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 80%, transparent 100%)',
+            }}
+          />
+        </div>
       </div>
 
       <div className="container-custom relative z-10">

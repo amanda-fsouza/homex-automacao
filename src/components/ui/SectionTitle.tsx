@@ -27,7 +27,8 @@ export default function SectionTitle({
       {tag && (
         <span
           className={cn(
-            'inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase w-fit',
+            'inline-flex items-center gap-2 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase w-fit',
+            align === 'left' ? 'pl-2 pr-4' : 'px-4',
             inverted
               ? 'bg-white/10 text-white'
               : 'bg-(--primary-light) text-(--primary)'

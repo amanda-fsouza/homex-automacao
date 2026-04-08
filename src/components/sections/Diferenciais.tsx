@@ -186,6 +186,7 @@ export default function Diferenciais() {
   const { ref: stepsTitleRef, isVisible: stepsTitleVisible } = useScrollAnimation()
   const { ref: phoneRef, isVisible: phoneVisible } = useScrollAnimation({ threshold: 0.1 })
   const { ref: mobileItensRef, isVisible: mobileItensVisible } = useScrollAnimation({ threshold: 0.1 }) // ← Novo ref para mobile
+  const { ref: bgRef, isVisible: bgVisible } = useScrollAnimation({ threshold: 0.1 })
 
   return (
     <section id="beneficios" className="bg-bg-dark relative overflow-hidden pt-20 lg:pt-28 pb-0">
@@ -195,6 +196,29 @@ export default function Diferenciais() {
         <div className="absolute -left-40 top-0 h-96 w-96 rounded-full bg-primary/8 blur-3xl" />
         <div className="absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-secondary/30 blur-3xl" />
         <div className="absolute left-1/2 top-1/2 h-px w-full -translate-x-1/2 bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      </div>
+
+      {/* Circuito decorativo — canto superior esquerdo, entra da esquerda */}
+      <div
+        ref={bgRef}
+        className="absolute top-0 left-0 w-[480px] max-w-[55%] pointer-events-none select-none"
+        style={{
+          opacity: bgVisible ? 1 : 0,
+          transform: bgVisible ? 'translateX(0)' : 'translateX(-80px)',
+          transition: 'opacity 1.2s ease, transform 1.2s ease',
+        }}
+      >
+        <img
+          src="/images/bg/bg.png"
+          alt=""
+          aria-hidden="true"
+          className="w-full"
+          style={{
+            opacity: 0.09,
+            maskImage: 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 70%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 70%, transparent 100%)',
+          }}
+        />
       </div>
 
       <div className="container-custom relative z-10">
