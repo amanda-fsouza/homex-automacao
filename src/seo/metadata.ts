@@ -75,14 +75,6 @@ export const defaultMetadata: Metadata = {
     title: 'HomeX Automação | Casa Inteligente em São José dos Campos',
     description:
       'Câmeras, fechaduras, controle de acesso, som ambiente, ar-condicionado e muito mais. Instalação sem obras em São José dos Campos e região.',
-    images: [
-      {
-        url: `${BASE_URL}/og-image.jpg`,
-        width: 1200,
-        height: 630,
-        alt: 'HomeX Automação Residencial',
-      },
-    ],
   },
 
   twitter: {
@@ -90,7 +82,6 @@ export const defaultMetadata: Metadata = {
     title: 'HomeX Automação | Casa Inteligente em São José dos Campos',
     description:
       'Automação residencial sem obras. Câmeras, fechaduras, AC, som ambiente e mais.',
-    images: [`${BASE_URL}/og-image.jpg`],
   },
 
   alternates: {
