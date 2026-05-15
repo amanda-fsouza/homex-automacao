@@ -94,11 +94,15 @@ export default function CTAFinal() {
             <div className="rounded-3xl bg-white p-6 shadow-[0_24px_64px_rgba(0,0,0,0.35)] lg:p-8">
               {/* Header do card do formulário */}
               <div className="mb-6 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M3 9.5L12 3L21 9.5V20C21 20.55 20.55 21 20 21H15V15H9V21H4C3.45 21 3 20.55 3 20V9.5Z" fill="white" />
-                    <circle cx="12" cy="13" r="2" fill="rgba(255,255,255,0.45)" />
-                  </svg>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center">
+                  <img
+                    src="/images/logo/logo-icon.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width={22}
+                    height={22}
+                    className="h-10 w-10 object-contain"
+                  />
                 </div>
                 <div>
                   <p className="font-display text-base font-bold text-content">Orçamento Gratuito</p>

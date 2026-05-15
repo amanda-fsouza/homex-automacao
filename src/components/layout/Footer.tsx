@@ -18,16 +18,14 @@ export default function Footer() {
           {/* Coluna 1: Brand */}
           <div className="lg:col-span-1 flex flex-col gap-5 items-center text-center lg:items-start lg:text-left">
             {/* Logo */}
-            <a href="#inicio" className="flex items-center gap-2.5 no-underline w-fit">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary shadow-[0_4px_14px_rgba(45,158,127,0.35)]">
-                <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
-                  <path d="M3 9.5L12 3L21 9.5V20C21 20.55 20.55 21 20 21H15V15H9V21H4C3.45 21 3 20.55 3 20V9.5Z" fill="white" />
-                  <circle cx="12" cy="13" r="2" fill="rgba(255,255,255,0.45)" />
-                </svg>
-              </div>
-              <span className="font-display text-[1.15rem] font-bold tracking-tight text-white">
-                Home<span className="text-primary">X</span>
-              </span>
+            <a href="#inicio" className="no-underline w-fit">
+              <img
+                src="/images/logo/logo-dark.svg"
+                alt="HomeX Automação"
+                width={130}
+                height={44}
+                className="h-11 w-auto"
+              />
             </a>
 
             <p className="text-sm leading-relaxed text-white/55 max-w-xs">

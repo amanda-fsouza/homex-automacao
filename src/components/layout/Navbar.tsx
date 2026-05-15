@@ -43,16 +43,14 @@ export default function Navbar() {
         <div className="mx-auto flex w-full max-w-480 items-center justify-between px-6 lg:px-20 2xl:px-70">
 
           {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-2.5 no-underline">
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary shadow-[0_4px_14px_rgba(45,158,127,0.35)]">
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
-                <path d="M3 9.5L12 3L21 9.5V20C21 20.55 20.55 21 20 21H15V15H9V21H4C3.45 21 3 20.55 3 20V9.5Z" fill="white" />
-                <circle cx="12" cy="13" r="2" fill="rgba(255,255,255,0.45)" />
-              </svg>
-            </div>
-            <span className={`font-display text-[1.15rem] font-bold tracking-tight transition-colors duration-300 ${scrolled ? 'text-content' : 'text-white'}`}>
-              Home<span className="text-primary">X</span>
-            </span>
+          <a href="#inicio" className="flex items-center no-underline">
+            <img
+              src={scrolled ? '/images/logo/logo.svg' : '/images/logo/logo02.svg'}
+              alt="HomeX Automação"
+              width={120}
+              height={40}
+              className="h-9 lg:h-12 w-auto transition-opacity duration-300"
+            />
           </a>
 
           {/* Nav Desktop */}

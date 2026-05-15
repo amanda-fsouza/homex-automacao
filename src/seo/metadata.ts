@@ -38,6 +38,24 @@ export const defaultMetadata: Metadata = {
   publisher: 'HomeX Automação',
   category: 'Automação Residencial',
 
+  // --- ÍCONES E MANIFESTO ---
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      { rel: 'icon', url: '/web-app-manifest-192x192.png', sizes: '192x192' },
+      { rel: 'icon', url: '/web-app-manifest-512x512.png', sizes: '512x512' },
+    ],
+  },
+  manifest: '/site.webmanifest',
+  // -------------------------
+
   robots: {
     index: true,
     follow: true,
