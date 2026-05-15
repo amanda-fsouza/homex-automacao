@@ -5,13 +5,11 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 import { cn } from '@/lib/utils'
 
 const VALORES = [
-  'Confiança acima de tudo',
-  'Atendimento próximo e verdadeiro',
-  'Excelência nos detalhes',
-  'Tecnologia com propósito',
-  'Transparência em cada projeto',
-  'Compromisso com resultado',
-  'Inovação sem complicação',
+  'Encantar clientes - Superar expectativas em cada detalhe',
+  'Tecnologia com propósito - Inovar para melhorar vidas',
+  'Proximidade - Relacionamentos verdadeiros com clientes',
+  'Confiança - Segurança e transparência em tudo',
+  'Experiência - Mais do que automação, criamos ambientes para experiências memoráveis',
 ]
 
 export default function Sobre() {
@@ -110,14 +108,14 @@ export default function Sobre() {
               <div className="rounded-2xl bg-primary/5 p-5 border-l-4 border-primary">
                 <h4 className="text-xs uppercase tracking-widest font-bold text-primary mb-2">Missão</h4>
                 <p className="text-sm text-content leading-relaxed">
-                  Levar conforto, praticidade e segurança para o dia a dia das pessoas através da automação residencial, com soluções sofisticadas, confiáveis e um atendimento realmente próximo.
+                  Proporcionar conforto, segurança e eficiência por meio de soluções inteligentes de automação residencial, integrando tecnologia de ponta ao dia a dia das pessoas de forma simples e intuitiva.
                 </p>
               </div>
               
               <div className="rounded-2xl bg-bg-dark/[0.03] p-5 border-l-4 border-content/20">
                 <h4 className="text-xs uppercase tracking-widest font-bold text-content mb-2">Visão</h4>
                 <p className="text-sm text-content-muted leading-relaxed">
-                  Criar experiências tecnológicas que façam as pessoas se sentirem mais conectadas, seguras e felizes dentro do próprio lar.
+                  Ser a empresa que redefine a forma como as pessoas vivem em seus lares, tornando cada casa um espaço mais humano, conectado e inspirador.
                 </p>
               </div>
 

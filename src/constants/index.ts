@@ -6,7 +6,7 @@ export const CONTATO = {
   email: 'contato@homexautomacao.com.br',
   instagram: 'https://instagram.com/homexautomacao',
   endereco: 'Av. Estevan Corbani, 304 - Jacareí, SP',
-  horario: 'Seg–Sex: 08h às 18h',
+  horario: 'Seg - Sex: 09h às 18h',
 } as const
 
 export const WHATSAPP_MSG_PADRAO =
@@ -236,7 +236,7 @@ export const FAQ_ITEMS: FAQ[] = [
   {
     pergunta: 'Preciso quebrar paredes ou fazer grandes reformas?',
     resposta:
-      'Não. Nosso foco é realizar uma instalação limpa e rápida. Na grande maioria dos projetos, utilizamos tecnologias sem fio (Wi-Fi, Bluetooth) e instalamos os módulos inteligentes diretamente nas caixas de luz ou tomadas que você já tem em casa. Tudo é feito sem quebra-quebra ou poeira.',
+      'Não. Nosso foco é realizar uma instalação limpa e rápida. Na grande maioria dos projetos, utilizamos tecnologias sem fio (Wi-Fi / Zigbee) e instalamos os módulos inteligentes diretamente nas caixas de luz ou tomadas que você já tem em casa. Tudo é feito sem quebra-quebra ou poeira.',
   },
   {
     pergunta: 'Posso automatizar uma casa que já está construída?',

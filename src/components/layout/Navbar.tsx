@@ -45,7 +45,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#inicio" className="flex items-center no-underline">
             <img
-              src={scrolled ? '/images/logo/logo.svg' : '/images/logo/logo02.svg'}
+              src={scrolled ? '/images/logo/logo-scroll.svg' : '/images/logo/logo-principal.svg'}
               alt="HomeX Automação"
               width={120}
               height={40}

@@ -54,7 +54,7 @@ const INFOS = [
       </svg>
     ),
     label: 'Horário',
-    valor: 'Seg–Sex: 08h às 18h',
+    valor: 'Seg - Sex: 09h às 18h',
     href: null,
   },
 ]
